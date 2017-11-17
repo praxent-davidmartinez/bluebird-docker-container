@@ -70,6 +70,12 @@ git clone https://$username@github.com/praxent/bluebird.git app
 cp -R $uploads-dir-backup app/wp-content/
 ```
 
+*Copy the wp-config.local.php file into __app__ directory:*
+
+```
+cp config/wp-config.local.php app
+```
+
 That's it! Now you can go to: *__http://localhost:8000__*
 
 If you want to connect to the MySQL database from your preferred database manager software, use the following settings:
