@@ -16,10 +16,10 @@ In order to set up and run this proyect you need the following
 
 Open a console in your machine and execute the following commands:
 
-*Clone this repository into your machine:*
+*Clone this repository into bluebird directory, replace __$username__ with your own github username:*
 
 ```
-git clone 
+git clone https://$username@github.com/praxent-davidmartinez/bluebird-docker-container.git bluebird
 ```
 
 *Download the source docker image from hub:*
@@ -28,7 +28,7 @@ git clone
 docker pull php:7.0-apache
 ```
 
-*cd into the repository directory:*
+*cd into the repository directory, please run all of the following commands from this directory:*
 
 ```
 cd bluebird
@@ -58,6 +58,17 @@ chmod 777 bin/start.sh && chmod 777 bin/stop.sh && chmod 777 bin/import-db.sh
 ./bin/import-db.sh
 ```
 
+*Now you can clone the website code into __app__ directory, replace __$username__ with your own github username:*
+
+```
+git clone https://$username@github.com/praxent/bluebird.git app
+```
+
+*Copy and paste the uploads backup copy into __app/wp-content/__*
+
+```
+cp -R $uploads-dir-backup app/wp-content/
+```
 
 That's it! Now you can go to: *__http://localhost:8000__*
 
@@ -68,6 +79,12 @@ If you want to connect to the MySQL database from your preferred database manage
 - database: *bluebird*
 - host: *127.0.0.1*
 - port: *8009*
+
+To check PHP and Apache error and access logs you can run:
+
+```
+docker logs --follow $container_id
+```
 
 ## Built With
 
