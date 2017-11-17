@@ -52,7 +52,7 @@ chmod 777 bin/start.sh && chmod 777 bin/stop.sh && chmod 777 bin/import-db.sh
 ./bin/start.sh
 ```
 
-*Place the latest database backup into __db__ directory and name it: __latest.sql__*
+*Place the latest database backup into __database__ directory and name it: __latest.sql__*
 
 ```
 ./bin/import-db.sh
