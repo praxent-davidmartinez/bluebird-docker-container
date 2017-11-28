@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   db:
     image: mysql:5.7
@@ -6,7 +6,7 @@ services:
       - "8009:3306"
     container_name: bluebird_mysql
     volumes:
-      - db_data:/mysql/data
+      - "./mysql/data:/var/lib/mysql"
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: elmismo
@@ -24,5 +24,3 @@ services:
     ports:
       - "8000:80"
     restart: always
-volumes:
-  db_data:
